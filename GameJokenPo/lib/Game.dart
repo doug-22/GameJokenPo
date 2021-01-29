@@ -7,7 +7,7 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {
-  var _imagemApp = AssetImage("imagens/padrao.png");
+  var _imagemApp = AssetImage("images/padrao.png");
   var _mensagem = "Escolha uma opção abaixo";
 
   void _opcaoSelecionada(String escolhaUsuario){
@@ -24,17 +24,17 @@ class _GameState extends State<Game> {
     switch( escolhaApp ){
       case "pedra" :
         setState(() {
-          this._imagemApp = AssetImage("imagens/pedra.png");
+          this._imagemApp = AssetImage("images/pedra.png");
         });
         break;
       case "papel" :
         setState(() {
-          this._imagemApp = AssetImage("imagens/papel.png");
+          this._imagemApp = AssetImage("images/papel.png");
         });
         break;
       case "tesoura" :
         setState(() {
-          this._imagemApp = AssetImage("imagens/tesoura.png");
+          this._imagemApp = AssetImage("images/tesoura.png");
         });
         break;
     }
@@ -44,7 +44,7 @@ class _GameState extends State<Game> {
         (escolhaUsuario == "papel" && escolhaApp == "pedra")
     ){
       setState(() {
-        this._mensagem = "Parabéns!!! Você ganhou :)";
+        this._mensagem = "Parabéns!! Você ganhou :)";
       });
     
     }else if(
@@ -53,11 +53,11 @@ class _GameState extends State<Game> {
         (escolhaApp == "papel" && escolhaUsuario == "pedra")
     ){
       setState(() {
-        this._mensagem = "Você perdeu :(";
+        this._mensagem = "Que Pena!! Você perdeu :(";
       });
     }else{
       setState(() {
-        this._mensagem = "Empatamos ;)";
+        this._mensagem = "Foi Quase!! Empatamos ;)";
       });
     }
 
@@ -101,21 +101,16 @@ class _GameState extends State<Game> {
             children: <Widget>[
               GestureDetector(
                 onTap: () => _opcaoSelecionada("pedra") ,
-                child: Image.asset("imagens/pedra.png", height: 100,),
+                child: Image.asset("images/pedra.png", height: 100,),
               ),
               GestureDetector(
                 onTap: () => _opcaoSelecionada("papel") ,
-                child: Image.asset("imagens/papel.png", height: 100,),
+                child: Image.asset("images/papel.png", height: 100,),
               ),
               GestureDetector(
                 onTap: () => _opcaoSelecionada("tesoura") ,
-                child: Image.asset("imagens/tesoura.png", height: 100,),
+                child: Image.asset("images/tesoura.png", height: 100,),
               )
-              /*
-              Image.asset("imagens/pedra.png", height: 100,),
-              Image.asset("imagens/papel.png", height: 100,),
-              Image.asset("imagens/tesoura.png", height: 100,)
-              */
             ],
           )
         ],
